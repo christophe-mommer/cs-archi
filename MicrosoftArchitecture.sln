@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensibility", "Extensibil
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensibilityWithoutMEF", "Extensibility\ExtensibilityWithoutMEF.csproj", "{CAB63FD5-E2FF-4D92-8604-B07C7DA24CAC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design Patterns", "Design Patterns", "{FC9193F0-31CA-4E13-ABAF-62FF46F3E275}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{52FC9A21-351B-4976-B769-32BBA8BCEF9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{CAB63FD5-E2FF-4D92-8604-B07C7DA24CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAB63FD5-E2FF-4D92-8604-B07C7DA24CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAB63FD5-E2FF-4D92-8604-B07C7DA24CAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52FC9A21-351B-4976-B769-32BBA8BCEF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52FC9A21-351B-4976-B769-32BBA8BCEF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52FC9A21-351B-4976-B769-32BBA8BCEF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52FC9A21-351B-4976-B769-32BBA8BCEF9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CAB63FD5-E2FF-4D92-8604-B07C7DA24CAC} = {479FE062-32E7-4EA3-AFCF-E368F593ECE8}
+		{52FC9A21-351B-4976-B769-32BBA8BCEF9E} = {FC9193F0-31CA-4E13-ABAF-62FF46F3E275}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0EB1BC1-AA01-493F-9397-A01DC0A21ED4}
