@@ -5,15 +5,17 @@ VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensibility", "Extensibility", "{479FE062-32E7-4EA3-AFCF-E368F593ECE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensibilityWithoutMEF", "Extensibility\ExtensibilityWithoutMEF.csproj", "{CAB63FD5-E2FF-4D92-8604-B07C7DA24CAC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design Patterns", "Design Patterns", "{FC9193F0-31CA-4E13-ABAF-62FF46F3E275}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{52FC9A21-351B-4976-B769-32BBA8BCEF9E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoC", "IoC", "{4E2744FB-3CFA-4C23-AB58-61FA37246F76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InversionOfControl", "InversionOfControl\InversionOfControl.csproj", "{83770013-092C-4AB2-A184-44B01B297432}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InversionOfControl", "InversionOfControl\InversionOfControl.csproj", "{83770013-092C-4AB2-A184-44B01B297432}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensibilityWithoutMEF", "Extensibility\WithoutMEF\ExtensibilityWithoutMEF.csproj", "{D46EB7B5-502F-4387-BDAD-E9E156E7B46F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WithMEF", "Extensibility\WithMEF\WithMEF.csproj", "{3BBD97C6-FE93-4E71-A537-BF279F92D0C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CAB63FD5-E2FF-4D92-8604-B07C7DA24CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAB63FD5-E2FF-4D92-8604-B07C7DA24CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CAB63FD5-E2FF-4D92-8604-B07C7DA24CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CAB63FD5-E2FF-4D92-8604-B07C7DA24CAC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{52FC9A21-351B-4976-B769-32BBA8BCEF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{52FC9A21-351B-4976-B769-32BBA8BCEF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52FC9A21-351B-4976-B769-32BBA8BCEF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,14 +31,23 @@ Global
 		{83770013-092C-4AB2-A184-44B01B297432}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83770013-092C-4AB2-A184-44B01B297432}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83770013-092C-4AB2-A184-44B01B297432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D46EB7B5-502F-4387-BDAD-E9E156E7B46F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46EB7B5-502F-4387-BDAD-E9E156E7B46F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D46EB7B5-502F-4387-BDAD-E9E156E7B46F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D46EB7B5-502F-4387-BDAD-E9E156E7B46F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BBD97C6-FE93-4E71-A537-BF279F92D0C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BBD97C6-FE93-4E71-A537-BF279F92D0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BBD97C6-FE93-4E71-A537-BF279F92D0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BBD97C6-FE93-4E71-A537-BF279F92D0C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{CAB63FD5-E2FF-4D92-8604-B07C7DA24CAC} = {479FE062-32E7-4EA3-AFCF-E368F593ECE8}
 		{52FC9A21-351B-4976-B769-32BBA8BCEF9E} = {FC9193F0-31CA-4E13-ABAF-62FF46F3E275}
 		{83770013-092C-4AB2-A184-44B01B297432} = {4E2744FB-3CFA-4C23-AB58-61FA37246F76}
+		{D46EB7B5-502F-4387-BDAD-E9E156E7B46F} = {479FE062-32E7-4EA3-AFCF-E368F593ECE8}
+		{3BBD97C6-FE93-4E71-A537-BF279F92D0C9} = {479FE062-32E7-4EA3-AFCF-E368F593ECE8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0EB1BC1-AA01-493F-9397-A01DC0A21ED4}
