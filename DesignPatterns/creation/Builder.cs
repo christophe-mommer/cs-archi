@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPatterns.creation
+namespace DesignPatterns.Creation
 {
     public interface Ingredient { string Name { get; } }
     public interface IBread { string Name { get; } }
