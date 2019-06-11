@@ -10,16 +10,16 @@ namespace DesignPatterns.Structure
         public int IntValue { get; set; }
     }
 
-    class TrackedDataModel
+    class TrackedModel<T> where T : class
     {
         public DateTime CreationDate { get; set; }
         public string CreationUser { get; set; }
 
-        public TrackedDataModel(DataModel model)
+        public TrackedModel(T model)
         {
             Model = model;
         }
 
-        public DataModel Model { get; }
+        public T Model { get; }
     }
 }

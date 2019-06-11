@@ -20,7 +20,7 @@ namespace DesignPatterns.Structure
                 Longitude = 2.333333m
             };
         }
-        public string GetStateForZipCode(string zipCode) { return "Ile-de-France"};
+        public string GetStateForZipCode(string zipCode) { return "Ile-de-France"; }
     }
     class WeatherService
     {
