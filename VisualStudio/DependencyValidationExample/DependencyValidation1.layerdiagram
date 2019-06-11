@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="7833767d-632c-4f76-b222-92bc019fdaa7" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="455d48ab-8bc0-444e-a6da-3f608ea8f5e3" name="DTOs">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="69625e19-00b7-4d3a-937f-6ba598712a00" direction="Forward">
+          <layerMoniker Id="e5dc65cc-de96-4b5d-a2c1-b57813b3d388" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="b2ff6aec-333c-4ad7-aa19-28f4de898a9d" name="VisualStudioArchitecture.DTOs">
+          <references>
+            <reference Id="611aceaf-a39f-47b5-a22d-aa0658728653" name="VisualStudioArchitecture.DTOs">
+              <ArtifactNode Label="VisualStudioArchitecture.DTOs" Category="CodeSchema_Namespace" Id="(Namespace=VisualStudioArchitecture.DTOs)" />
+              <ExpandedNode Id="(Namespace=VisualStudioArchitecture.DTOs)" Label="VisualStudioArchitecture.DTOs" Category="CodeSchema_Namespace">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="e5dc65cc-de96-4b5d-a2c1-b57813b3d388" name="Models">
+      <childLayers>
+        <layer Id="af4d0da2-cce8-4b9f-92dc-8b0ce2b908fb" name="VisualStudioArchitecture.Models">
+          <references>
+            <reference Id="3dbba0b1-2d1d-454a-8c63-dc9923c4cd53" name="VisualStudioArchitecture.Models">
+              <ArtifactNode Label="VisualStudioArchitecture.Models" Category="CodeSchema_Namespace" Id="(Namespace=VisualStudioArchitecture.Models)" />
+              <ExpandedNode Id="(Namespace=VisualStudioArchitecture.Models)" Label="VisualStudioArchitecture.Models" Category="CodeSchema_Namespace">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>
