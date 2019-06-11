@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualStudioArchitecture", 
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DependencyValidationExample", "VisualStudio\DependencyValidationExample\DependencyValidationExample.modelproj", "{08D619CF-01AA-45D9-A17A-17CD45247EAE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisualStudioArchitectureCore", "VisualStudio\VisualStudioArchitectureCore\VisualStudioArchitectureCore.csproj", "{4F748E16-A43D-4519-8BC9-8C216F7BC4A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{08D619CF-01AA-45D9-A17A-17CD45247EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08D619CF-01AA-45D9-A17A-17CD45247EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08D619CF-01AA-45D9-A17A-17CD45247EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F748E16-A43D-4519-8BC9-8C216F7BC4A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F748E16-A43D-4519-8BC9-8C216F7BC4A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F748E16-A43D-4519-8BC9-8C216F7BC4A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F748E16-A43D-4519-8BC9-8C216F7BC4A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{3BBD97C6-FE93-4E71-A537-BF279F92D0C9} = {479FE062-32E7-4EA3-AFCF-E368F593ECE8}
 		{AFB06C3B-BC6E-4566-A604-919BCD23EE39} = {70A53B53-EFBD-4B7E-99F1-FBA22903C3BF}
 		{60B06209-E8E8-49F7-8B37-E6C39339C11C} = {08E41892-16F0-4091-BD8C-83734E982FCB}
+		{4F748E16-A43D-4519-8BC9-8C216F7BC4A1} = {08E41892-16F0-4091-BD8C-83734E982FCB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0EB1BC1-AA01-493F-9397-A01DC0A21ED4}
