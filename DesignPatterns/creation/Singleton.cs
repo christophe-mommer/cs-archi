@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPatterns.creation
+namespace DesignPatterns.Creation
 {
     class WebServiceHelper
     {
