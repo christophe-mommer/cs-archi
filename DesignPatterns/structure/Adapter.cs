@@ -4,6 +4,8 @@ using System.Text;
 
 namespace DesignPatterns.Structure
 {
+    #region Service sample
+
     class ComplexService
     {
         public bool CurrentState { get; set; }
@@ -20,6 +22,27 @@ namespace DesignPatterns.Structure
 
         }
     }
+
+    class ServiceWrapper
+    {
+        private readonly ComplexService _service;
+
+        public ServiceWrapper(ComplexService service)
+        {
+            _service = service;
+        }
+
+        public void DoSomethingSimple()
+        {
+            _service.DoSomethingOne();
+            _service.DoSomethingTwo();
+            _service.DoSomethingThree();
+        }
+    }
+
+    #endregion
+
+    #region Model sample
 
     public class DomainModel
     {
@@ -40,20 +63,6 @@ namespace DesignPatterns.Structure
         public string ComposedProp => _model.PropOne + " " + _model.PropTwo + " = " + _model.PropThree;
     }
 
-    class ServiceWrapper
-    {
-        private readonly ComplexService _service;
+    #endregion
 
-        public ServiceWrapper(ComplexService service)
-        {
-            _service = service;
-        }
-
-        public void DoSomethingSimple()
-        {
-            _service.DoSomethingOne();
-            _service.DoSomethingTwo();
-            _service.DoSomethingThree();
-        }
-    }
 }

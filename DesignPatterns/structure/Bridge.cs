@@ -12,6 +12,14 @@ namespace DesignPatterns.Structure
     {
         CustomerData RetrieveData();
     }
+    class SQLCustomerDataProvider : ICustomerDataProvider
+    {
+        public CustomerData RetrieveData() => new CustomerData { Source = "SQL" };
+    }
+    class CSVCustomerDataProvider : ICustomerDataProvider
+    {
+        public CustomerData RetrieveData() => new CustomerData { Source = "CSV" };
+    }
     interface ICustomerService
     {
         void GetCustomerData(ICustomerDataProvider dataProvider);
@@ -23,13 +31,5 @@ namespace DesignPatterns.Structure
             var data = dataProvider.RetrieveData();
             //Do something with data
         }
-    }
-    class SQLCustomerDataProvider : ICustomerDataProvider
-    {
-        public CustomerData RetrieveData() => new CustomerData { Source = "SQL" };
-    }
-    class CSVCustomerDataProvider : ICustomerDataProvider
-    {
-        public CustomerData RetrieveData() => new CustomerData { Source = "CSV" };
     }
 }
