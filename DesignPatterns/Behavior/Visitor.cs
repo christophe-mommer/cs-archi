@@ -53,6 +53,19 @@ namespace DesignPatterns.Behavior
         public void Visit(Loan loan) => Total -= loan.Owed;
     }
 
+    class MonthlyIncomeVisitor : IBankVisitor
+    {
+        public decimal Total { get; private set; }
+        public void Visit(RealEstate realEstate)
+             => Total += realEstate.MonthlyRent;
+
+        public void Visit(BankAccount bankAccount)
+            => Total += bankAccount.Amount * bankAccount.MonthlyInterest;
+
+        public void Visit(Loan loan)
+             => Total -= loan.MonthlyPayment;
+    }
+
     class BankManager
     {
         public void ComputeNetWorth(BankClient client)
