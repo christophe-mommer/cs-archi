@@ -4,20 +4,37 @@ using System.Text;
 
 namespace DesignPatterns.Structure
 {
-    class Proxy
-    {
 
-        SensibleDomainModel GetSensibleInfos(string userName, string password)
+    interface ISensibleInfosGetter
+    {
+        SensibleDomainModel GetSensibleInfos();
+    }
+
+    class Proxy : ISensibleInfosGetter
+    {
+        private readonly string _userName;
+        private readonly string _password;
+
+        public Proxy(string userName, string password)
         {
-            if (userName == "admin" && password == "password")
+            _userName = userName;
+            _password = password;
+        }
+        public SensibleDomainModel GetSensibleInfos()
+        {
+            if (_userName == "admin" && _password == "password")
                 return new SensibleDomainModel
                 { HighValueData = "Bill Gate's Credit card = 1234 5678 9101 1213" };
             return null;
         }
 
     }
-    class SensibleDomainModel
+
+    class SensibleDomainModel : ISensibleInfosGetter
     {
         public string HighValueData { get; set; }
+
+        public SensibleDomainModel GetSensibleInfos()
+            => this;
     }
 }
