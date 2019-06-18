@@ -42,12 +42,13 @@ namespace MicroORMSample
 
             #endregion
 
-            var orm = new MicroORMContext();
+            var orm = new MicroORMContext(InMemoryDataAdapter.Instance);
 
             orm.OnSaveChanged += ((int NbAdd, int NbUpdates, int NbDeletes) data) =>
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine($"A saved has beend performed with {data.NbAdd} add(s), {data.NbUpdates} update(s) and {data.NbDeletes} deletion(s)");
+                Console.WriteLine($"A saved has been performed with {data.NbAdd} add(s), " +
+                    $"{data.NbUpdates} update(s) and {data.NbDeletes} deletion(s)");
                 Console.ResetColor();
             };
 
@@ -59,7 +60,7 @@ namespace MicroORMSample
 
             try
             {
-                orm.Delete<Person>(Guid.NewGuid());
+                orm.Delete(new Person());
             }
             catch(InvalidOperationException)
             {

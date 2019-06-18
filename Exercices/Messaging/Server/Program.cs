@@ -34,7 +34,9 @@ namespace Server
                                       routingKey: "");
 
                     var consumer = new EventingBasicConsumer(channel);
-                    var orm = new MicroORMContext();
+                    #region ORM
+
+                    var orm = new MicroORMContext(InMemoryDataAdapter.Instance);
                     orm.OnSaveChanged += ((int NbAdd, int NbUpdates, int NbDeletes) data) =>
                     {
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -42,26 +44,33 @@ namespace Server
                         Console.ResetColor();
                     };
 
+                    #endregion
                     consumer.Received += (model, ea) =>
                     {
+                        Console.WriteLine("Entering message reception");
+                        #region ORM treatment
+
                         var body = ea.Body;
                         var message = Newtonsoft.Json.JsonConvert.DeserializeObject<Message>(Encoding.UTF8.GetString(body));
+                        var modelType = Type.GetType(message.Type);
+                        var modelData = Newtonsoft.Json.JsonConvert.DeserializeObject(message.Data, modelType) as DataModel;
 
                         switch (message.Operation)
                         {
                             case "Add":
-                                orm.Add(message.Data);
+                                orm.Add(modelData);
                                 break;
                             case "Update":
-                                orm.Update(message.Data);
+                                orm.Update(modelData);
                                 break;
                             case "Delete":
-                                orm.Delete(message.Data);
+                                orm.Delete(modelData);
                                 break;
                         }
                         orm.Save();
-                    };
 
+                        #endregion
+                    };
                     channel.BasicConsume(queue: queue,
                                          autoAck: true,
                                          consumer: consumer);

@@ -22,5 +22,11 @@ namespace MicroORM.Common
         {
             Instance = instance;
         }
+
+        public override bool Equals(object obj)
+        => (obj as TrackedModel)?.Instance?.Id == Instance.Id;
+
+        public override int GetHashCode()
+            => (Instance.GetType().AssemblyQualifiedName + Instance.Id).GetHashCode();
     }
 }

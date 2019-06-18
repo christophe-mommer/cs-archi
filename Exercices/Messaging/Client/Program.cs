@@ -31,15 +31,16 @@ namespace Client
             Console.WriteLine("Press enter to exit");
             Console.ReadLine();
         }
-        static void SendData(DataModel data, string operation)
+        static void SendData<T>(T data, string operation) where T : DataModel
         {
-            var factory = new RabbitMQ.Client.ConnectionFactory { HostName = "localhost" };
+            var factory = new RabbitMQ.Client.ConnectionFactory {  HostName = "localhost" };
             using (var connection = factory.CreateConnection())
             {
                 using (var channel = connection.CreateModel())
                 {
                     channel.ExchangeDeclare("MessageQueuing", ExchangeType.Fanout);
-                    string serializedMessage = Newtonsoft.Json.JsonConvert.SerializeObject(new Message(data, operation));
+                    string serializedMessage =
+                        Newtonsoft.Json.JsonConvert.SerializeObject(new Message<T>(data, operation));
                     var message = Encoding.UTF8.GetBytes(serializedMessage);
                     channel.BasicPublish(exchange: "MessageQueuing",
                                          routingKey: "",
