@@ -70,7 +70,7 @@ namespace DesignPatterns.Structure
             (int x, int y) = GetXY();
             Console.WriteLine("Select the shape you want to draw");
             Console.WriteLine("1. Square");
-            Console.WriteLine("2. Triange");
+            Console.WriteLine("2. Triangle");
             var choice = int.Parse(Console.ReadLine());
             if (choice == 1)
             {
