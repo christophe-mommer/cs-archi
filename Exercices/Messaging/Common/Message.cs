@@ -6,10 +6,10 @@ using System.Text;
 
 namespace Common
 {
+    [Serializable]
     public class Message
     {
-        public string Data { get; set; }
-        public string Type { get; set; }
+        public DataModel Data { get; set; }
         public string Operation { get; set; }
 
         public Message()
@@ -18,9 +18,8 @@ namespace Common
         }
         public Message(DataModel data, string operation)
         {
-            Data = JsonConvert.SerializeObject(data);
+            Data = data;
             Operation = operation;
-            Type = data.GetType().AssemblyQualifiedName;
         }
     }
 

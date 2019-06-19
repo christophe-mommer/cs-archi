@@ -4,6 +4,7 @@ using System.Text;
 
 namespace MicroORM.Common
 {
+    [Serializable]
     public class Address : DataModel
     {
         public string Line1 { get; set; }

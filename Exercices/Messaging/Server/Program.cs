@@ -4,6 +4,8 @@ using MicroORMSample;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
 namespace Server
@@ -50,24 +52,26 @@ namespace Server
                         Console.WriteLine("Entering message reception");
                         #region ORM treatment
 
-                        var body = ea.Body;
-                        var message = Newtonsoft.Json.JsonConvert.DeserializeObject<Message>(Encoding.UTF8.GetString(body));
-                        var modelType = Type.GetType(message.Type);
-                        var modelData = Newtonsoft.Json.JsonConvert.DeserializeObject(message.Data, modelType) as DataModel;
-
-                        switch (message.Operation)
+                        using (var memStream = new MemoryStream(ea.Body, 0, ea.Body.Length))
                         {
-                            case "Add":
-                                orm.Add(modelData);
-                                break;
-                            case "Update":
-                                orm.Update(modelData);
-                                break;
-                            case "Delete":
-                                orm.Delete(modelData);
-                                break;
+                            var message = new BinaryFormatter().Deserialize(memStream) as Message;
+                            //var modelType = Type.GetType(message.Type);
+                            //var modelData = Newtonsoft.Json.JsonConvert.DeserializeObject(message.Data, modelType) as DataModel;
+                            var modelData = message.Data;
+                            switch (message.Operation)
+                            {
+                                case "Add":
+                                    orm.Add(modelData);
+                                    break;
+                                case "Update":
+                                    orm.Update(modelData);
+                                    break;
+                                case "Delete":
+                                    orm.Delete(modelData);
+                                    break;
+                            }
+                            orm.Save();
                         }
-                        orm.Save();
 
                         #endregion
                     };

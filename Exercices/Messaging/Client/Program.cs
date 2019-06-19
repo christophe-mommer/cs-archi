@@ -2,6 +2,8 @@
 using MicroORM.Common;
 using RabbitMQ.Client;
 using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
 namespace Client
@@ -39,13 +41,16 @@ namespace Client
                 using (var channel = connection.CreateModel())
                 {
                     channel.ExchangeDeclare("MessageQueuing", ExchangeType.Fanout);
-                    string serializedMessage =
-                        Newtonsoft.Json.JsonConvert.SerializeObject(new Message<T>(data, operation));
-                    var message = Encoding.UTF8.GetBytes(serializedMessage);
-                    channel.BasicPublish(exchange: "MessageQueuing",
-                                         routingKey: "",
-                                         basicProperties: null,
-                                         body: message);
+                    using (var memStream = new MemoryStream())
+                    {
+                        var message = new Message(data, operation);
+                        new BinaryFormatter().Serialize(memStream, message);
+                        var body = memStream.ToArray();
+                        channel.BasicPublish(exchange: "MessageQueuing",
+                                             routingKey: "",
+                                             basicProperties: null,
+                                             body: body);
+                    }
                 }
             }
         }
