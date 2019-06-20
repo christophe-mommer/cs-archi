@@ -12,6 +12,6 @@ namespace VisualStudioArchitecture.Models
         public string Body { get; set; }
         public int NbPages { get; set; }
         public Guid Id { get; set; }
-        //public BookListItemDTO DTO { get; set; }
+        public BookListItemDTO DTO { get; set; }
     }
 }
